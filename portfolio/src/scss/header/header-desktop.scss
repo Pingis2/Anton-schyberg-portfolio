@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Limelight&display=swap');
+
 header {
     background-color: white;
     border-bottom: 2px solid black;
@@ -6,7 +8,16 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+
+    p {
+        margin-left: 50px;
+        font-size: 48px;
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        cursor: pointer;
+    }
 
     ul {
         width: auto;
@@ -16,5 +27,48 @@ header {
         margin: 0 50px 0 0;
         padding: 0;
         gap: 15px;
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 24px;
+        
+        li {
+            cursor: pointer;
+
+            button {
+                all: unset;
+                position: relative;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                &.active {
+                    text-decoration: underline;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        bottom: -1px;
+                        transform: translateX(-50%);
+                        width: 60%;
+                        height: 2px;
+                        background-color: black;
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        bottom: -7px;
+                        transform: translateX(-50%);
+                        width: 40%;
+                        height: 2px;
+                        background-color: black;
+                    }
+                }
+            }
+        }
     }
 }
